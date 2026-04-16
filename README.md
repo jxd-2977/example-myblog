@@ -49,6 +49,9 @@ startbootstrap-clean-blog/
 │       ├── contact-bg.jpg  # 联系页背景图
 │       ├── post-bg.jpg     # 文章页背景图
 │       └── post-sample-image.jpg  # 示例文章图片
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # GitHub Actions 部署配置
 ├── .gitignore              # Git 忽略配置
 ├── LICENSE                 # 许可证
 └── README.md               # 项目说明文档
@@ -79,10 +82,85 @@ php -S localhost:8000
 
 本项目是纯静态网站，可以部署到任何静态托管服务：
 
-- **GitHub Pages** - 免费托管
+- **GitHub Pages** - 免费托管（已配置自动部署）
 - **Netlify** - 自动部署
 - **Vercel** - 快速部署
 - **传统 Web 服务器** - Apache/Nginx
+
+## Git Commit 规范
+
+本项目遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范。
+
+### Commit 消息格式
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+### Type 类型
+
+| 类型 | 说明 | 示例 |
+|------|------|------|
+| `feat` | 新功能 | `feat: add contact form` |
+| `fix` | 修复 bug | `fix: resolve menu issue` |
+| `docs` | 文档变更 | `docs: update README` |
+| `style` | 代码格式 | `style: format CSS code` |
+| `refactor` | 代码重构 | `refactor: simplify logic` |
+| `perf` | 性能优化 | `perf: optimize images` |
+| `test` | 测试相关 | `test: add form tests` |
+| `chore` | 构建/工具 | `chore: update dependencies` |
+| `ci` | CI/CD 配置 | `ci: configure Actions` |
+| `revert` | 回退提交 | `revert: feat: add form` |
+
+### 实用示例
+
+```bash
+# 新功能
+git commit -m "feat: add responsive navigation menu"
+
+# 修复问题
+git commit -m "fix: correct image alignment on mobile"
+
+# 文档更新
+git commit -m "docs: add deployment guide to README"
+
+# 样式调整
+git commit -m "style: improve button hover effects"
+
+# 性能优化
+git commit -m "perf: compress images for faster loading"
+
+# 带 scope
+git commit -m "feat(css): add dark mode support"
+git commit -m "fix(js): resolve form validation bug"
+
+# 完整的 commit 消息
+git commit -m "feat(contact): add form validation
+
+- Add email format validation
+- Implement required field checks
+- Display error messages
+
+Closes #123"
+```
+
+### 最佳实践
+
+✅ **推荐做法：**
+- 使用祈使语气（"add" 而非 "added"）
+- 首字母小写
+- 结尾不加句号
+- 标题行不超过 50 字符
+- 详细说明放在 body 部分
+
+❌ **避免做法：**
+- ~~"fixed bug"~~ → ✅ "fix: resolve issue"
+- ~~"update files"~~ → ✅ "docs: update configuration"
+- ~~"changes"~~ → ✅ "refactor: improve code structure"
 
 ## 自定义指南
 
